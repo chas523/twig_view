@@ -1,0 +1,77 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+{{ include('navbar/navbar.html') }}
+
+<section class="register">
+    <div class="backgorund">
+      <div class="white">
+          <img src="img/log.png" alt="" srcset="">
+      </div>
+      <div class="black"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class=" col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+          <h1 class="title">Sing up</h1>
+        </div>
+      </div>
+      <form method="POST">
+        <div class="row mt-5">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+            <input type="email" placeholder="email" name="email" required>
+            <p style="color: darkred;">{{ email_error }}</p>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+            <input type="text" placeholder="username" name="username" required>
+            <p  style="color: darkred;">{{  username_error  }}</p>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+            <input type="password" name="password" id="password1" placeholder="password" required minlength="6" maxlength="60" onchange="onChange()">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+            <input type="password" name="confirm_password" id="password2" placeholder="confirm password" required  minlength="6" maxlength="60" onchange="onChange()"  >
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+              <input type="submit" name="btn" class="btn" value="Sing up" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8">
+             <div class="or">
+               OR
+             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8 btn-a" >
+            <a href="/login"><input type="text" class="btn" value="Log in" style="caret-color: transparent"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 offset-lg-7 col-xl-4 offset-xl-8 btn-a" style="color: white;" >
+            <a href="#" class="link">Forget password</a>
+          </div>
+        </div>
+      </form>
+    </div>
+</section>
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-lg-4 offset-lg-4 circle">
+      <a id="myLink" title="Click to do something"
+      href="#" ><i class="bi bi-arrow-up-circle-fill"></i>
+    </a>
+    </div>
+  </div>
+</div>
+{{ include('footer/footer.html')}}
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+{{ include('navbar/navbar.html') }}
+
+<section class="home">
+    <img src="img/top-left.png" class="flower flower_1" alt="">
+    <img src="img/fl-left.png"  class="flower flower_2" alt="">
+    <img src="img/fl-right.png" class="flower flower_3" alt="">
+    <img src="img/fl-left.png"   class="flower flower_4" alt="">
+    <div class="container">
+      <div class="row mt-3">
+       <div class="col-12 col-lg-6 offset-lg-2">
+         <h1>Welcome</h1>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-12 col-lg-6 offset-lg-2">
+        <div class="home_descr">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum perspiciatis pariatur suscipit incidunt vel esse dicta, nulla eum doloremque voluptatem, rerum dolores obcaecati atque molestiae quibusdam explicabo soluta optio.
+        </div>
+      </div>
+     </div>
+     <div class="row" style="margin-top: 20px;">
+       <div class="col-5 col-lg-3 offset-lg-2">
+        <div class="home_btn">
+          <a href='/login'>Log in</a>
+        </div>
+       </div>
+       <div class="col-5 col-lg-3" style="padding-left: 0">
+          <div class="home_btn">
+            <a href='/register'>Sing up</a>
+          </div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col col-lg-10 offset-lg-2" style=" caret-color: transparent">
+         Lorem ipsum dolor sit amet consectetur
+       </div>
+     </div>
+     </div>
+  </section>
+  <section class="home_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-2">
+                <h2>Lorem this you can </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-2">
+                <div class="home_descr_2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias numquam iste ad sint, illo natus accusantium libero debitis sed aliquam doloribus totam commodi quae reprehenderit, ipsam officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas neque quidem perspiciatis animi hic commodi, dolorem dolores, veritatis, eaque dolore itaque enim libero magnam assumenda accusantium! Modi ullam ab ipsam.
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-md-6 col-lg-3 offset-lg-2">
+                <div class="btn">
+                    <a href="/gallary">gallary</a>  
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section class="home_3">
+    <img src="img/1.png"  alt="">
+   <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-2">
+                <h2>Lorem this you can </h2>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 offset-lg-2">
+            <div class="describe">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. bs
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. bs
+            </div>
+        </div>
+        <form action="https://formspree.io/f/mpzkqvbk"method="post">
+            <div class="row mt-4">
+                <div class="col-12  col-md-5 offset-lg-2">
+                    <input class="home_input" type="email" placeholder="your email" name="email" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 col-md-5 offset-lg-2">
+                   <input class="home_input" type="text" placeholder="your question" name="question" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 col-md-7 offset-lg-2">
+                    <textarea class="textarea" name = "textarea" required placeholder="your message"></textarea>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 col-md-3 offset-lg-2">
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+  </section>
+  
+{{ include('footer/footer.html')}}
+{% endblock %}
+
+
+

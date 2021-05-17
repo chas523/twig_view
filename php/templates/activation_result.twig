@@ -1,0 +1,17 @@
+
+{% extends "layout.twig" %}
+
+
+{% if result == 1 %}
+    {% set content_result = ' <div style="text-align: center; margin-top:50px; font-size: 35px"> account is already activated <a href="/">Go back</a> </div> ' %}
+{% endif %}
+{% if result == 2 %}
+    {% set content_result = ' <div style="text-align: center; margin-top:50px; font-size: 35px"> account activated <a href="/">Go back</a> </div>'  %}
+{% endif %}
+{% if result == 3 %}
+    {% set content_result = ' <div style="text-align: center; margin-top:50px; font-size: 35px">something went wrong <a href="/">Go back</a> </div>' %}
+{% endif %}
+
+{% block content %}
+    {{ content_result|raw }}
+{% endblock %}

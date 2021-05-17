@@ -1,0 +1,10 @@
+
+footer {
+    position: fixed;
+    bottom: -150px;
+    transition: 0.5s all; 
+    background-color: black'  
+}
+.visable {
+    bottom: 0;
+}

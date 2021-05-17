@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0.23
+    environment:
+      MYSQL_ROOT_PASSWORD: xxxx
+      MYSQL_DATABASE: test_db2
+      MYSQL_USER: abcx
+      MYSQL_PASSWORD: xyzx
+    ports:
+      - "9906:3306"
+  web:
+    image: php:7.4.16-apache
+    container_name: test
+    depends_on:
+      - db
+    volumes:
+      - ./php/:/var/www/html/
+    ports:
+      - "8100:80"
+    stdin_open: true
+    tty: true

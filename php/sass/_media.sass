@@ -1,0 +1,162 @@
+@media (min-width: 1200px ) 
+    header .container
+        &:nth-child(2)
+            display: none
+            
+@media ( max-width: 1200px )
+    header
+        .container
+            &:nth-child(2)
+                display: none
+                
+        .menu
+            padding-left: 450px
+    .flower_1
+        height: 250px
+    .flower_2
+        height: 408px
+    .flower_3
+        height: 340px
+    .flower_4
+        height: 408px
+    .register .backgorund .white img
+        width: 500px
+        left: 0
+        top: 20%
+    .login .backgorund .white img
+        width: 500px 
+        left: 0
+        top: 20% 
+    .gallary .bg_img 
+        right: -107px
+        height: 600px
+    .gallary .container .gallary_block 
+        width: 100%
+        height: 305px
+
+@media ( max-width: 991px )
+    .gallary .bg_img
+        right: -200px
+    header
+        .menu
+            padding-left: 230px
+    .flower_1
+        height: 210px
+    .flower_2
+        height: 350px
+    .flower_3
+        height: 260px
+    .flower_4
+        height: 384px
+    .home_3
+        img
+            height: 490px
+    .register .container .title
+        text-align: center
+        color: black
+    .login .container .title 
+        color: black
+        text-align: center
+    .register .backgorund .white
+        width: 100%
+        background-color: black
+        display: none
+    .login .backgorund
+        display: none
+    .register .backgorund .black
+        display: none
+    .register .container input
+        background-color: rgba(0, 0, 0, 0)
+        border-bottom: 2px solid black
+        color: black
+    .login  .container input 
+        background-color: rgba(0, 0, 0, 0)
+        border-bottom: 2px solid black 
+        color: black
+    .register .container .btn
+        background-color: black
+        color: white
+        border: 2px solid black
+    .login .container .btn 
+        background-color: black
+        color: white 
+        border: 2px solid black
+    .register .container .or
+        color: black
+    .login .container .or 
+        color: black
+    .circle
+        margin-top: 85px
+@media screen and ( max-width: 768px)
+    header
+        .menu
+            padding-left: 10px
+    .home
+        .flower_1, .flower_2, .flower_3, .flower_4
+            display: none
+    .home_3 img
+        display: none
+    .gallary .bg_img
+        display: none
+    .gallary .container .gallary_block
+        display: block
+        overflow: visible
+        height: auto
+    .gallary .container .gallary_block .block_left
+        width: 100%
+        height: 400px
+    .gallary .container .gallary_block .block_right
+        width: 100%
+        .block_describe
+            overflow: hidden
+        h2
+            margin-top: 10px
+    .gallary .container .gallary_block .block_right .block_btn
+        width: 100%
+        bottom: -5px
+    
+@media screen and ( max-width: 576px )
+    header .container
+        &:nth-child(1)
+            display: none
+        &:nth-child(2)
+            position: relative
+            display: block
+            padding: 0
+            .hamburger
+                position: absolute
+                top: 0
+                left: 0
+                z-index: 2
+         
+                .hamburger-inner
+                    background-color: white  
+                    &::before
+                        background-color: white
+                    &::after
+                        background-color: white
+                        
+            nav
+                transition: 0.5s all
+                background-color: $navbar
+                width: 100%
+                height: 55px
+                z-index: 1
+                .menu
+                    display: none
+            .display_nav
+                    height: 600px
+                    
+                    .menu
+                        transition: 0.8s all
+                        display: block
+                        text-align: center
+                        padding-top: 100px
+                        &_item 
+                            padding-top: 20px
+                            a
+                                font-size: 40px
+                                transition: 0.8s all
+                
+    header
+        background-color: white    
