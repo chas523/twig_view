@@ -81,9 +81,11 @@ function Log_In($email, $password) {
     $result = $db->query($sql); 
     while ($row = $result->fetchArray()) {
         if($row[0] == $password && $row[1] == 1) {
+            $db->close();
             return 1; 
         }
     }
+    $db->close();
     return 0; 
     
 }
@@ -259,8 +261,27 @@ $app->post('gallary/{teg}', function($request, $response, $args){
         ]
     );
 }); 
-
-
+$app->get('/dbview', function($request, $response, $args){
+   
+    $db =  new SqLite3('data/data.db');
+    $query = "SELECT * FROM user_login";
+    $result = $db->query($query);
+    echo "<table>";
+    echo "<tr>
+        <th>id_user</th>
+        <th>email</th>
+        <th>username</th>
+        <th>password</th>
+        <th>user_hash</th>
+        <th>status</th>
+    </tr>";
+    while($row = $result->fetchArray()){   //Creates a loop to loop through results
+        echo "<tr><td>".$row['id_user']."</td><td>".$row['email']."</td><td>".$row['username']."</td><td>".$row["password"]."</td><td>".$row["user_hash"]."</td><td>".$row["status"]."</td></tr>";
+    }
+    echo "</table>";
+    $db -> close(); 
+    return $response; 
+}); 
 
 
 
