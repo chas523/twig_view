@@ -17,7 +17,7 @@ $app->addRoutingMiddleware();
 $twig = Twig::create('templates', ['cache' => false]);  // => 'cache' 
 $app->add(TwigMiddleware::create($app, $twig));
 
-$errorMiddleware = $app->addErrorMiddleware(false, false, false);  // !improtant
+$errorMiddleware = $app->addErrorMiddleware(true, true, true);  // !improtant
 
 
 //global value   
@@ -60,6 +60,34 @@ $app->get('/login', function ($request, $response, $args) use($css_bootstrap,$my
         ]
     );
 });
+$app->post('/login', function(Request $request, Response $response, $args)  {
+    $view = Twig::fromRequest($request);
+    $params = $request->getParsedBody();
+    // $email_error = '';
+    // $password_error = ''; 
+    $email = htmlspecialchars($params["email"]); 
+    $password = md5(md5(trim($params['password'])));
+    $result = Log_In($email,$password); 
+
+    return $view->render($response, 'result_login.twig',[
+         'title' => 'result',
+         'result_login' => $result
+        ]
+    ); 
+}); 
+function Log_In($email, $password) {
+    $db =  new SqLite3('data/data.db');
+    $sql = "SELECT password,status FROM user_login WHERE email="."'".$email."'"; 
+    $result = $db->query($sql); 
+    while ($row = $result->fetchArray()) {
+        if($row[0] == $password && $row[1] == 1) {
+            return 1; 
+        }
+    }
+    return 0; 
+    
+}
+
 $app->get('/register', function ($request, $response, $args) use($css_bootstrap,$my_css,$script) {
     $view = Twig::fromRequest($request);
     $error_email ='This email already exist'; 
@@ -70,20 +98,6 @@ $app->get('/register', function ($request, $response, $args) use($css_bootstrap,
         ]
     );
 });
-$app->get('/phpinfo',function($request,$response,$args) {
-    phpinfo(); 
-});
-$app->get('/mysql',function($request,$response,$args) {
-    $link = mysqli_connect("localhost", "root", "");
-
-    $sql = 'INSERT INTO cities SET name = "Санкт-Петербург"';
-    $result = mysqli_query($link, $sql);
-    
-    if ($result == false) {
-        print("Произошла ошибка при выполнении запроса");
-    }
-});
-
 
 $app->post('/register',function(Request $request, Response $response, $args) use($css_bootstrap,$my_css,$script) {
     $view = Twig::fromRequest($request);
